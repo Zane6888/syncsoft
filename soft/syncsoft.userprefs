@@ -3,7 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MainWindow.cs">
     <Files>
       <File FileName="Main.cs" Line="1" Column="1" />
-      <File FileName="MainWindow.cs" Line="1" Column="1" />
+      <File FileName="MainWindow.cs" Line="19" Column="1" />
+      <File FileName="DiscoveryContainer.cs" Line="14" Column="1" />
+      <File FileName="t.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -51,6 +51,9 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="DiscoveryContainer.cs" />
+    <Compile Include="t.cs" />
+    <Compile Include="gtk-gui\syncsoft.t.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
