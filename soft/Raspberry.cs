@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using System.Net.Sockets;
 
 namespace syncsoft
 {
     class Raspberry
     {
+        public static const int PORT = 2727;
         /// <summary>
         /// Human readable name of this Raspberry. Returned on discovery.
         /// </summary>
@@ -33,13 +35,15 @@ namespace syncsoft
         /// <summary>
         /// The prefered sync protocol for the Raspberry. Returned on request. Cached after first Call. Is null if the Raspberry knows multiple can't state it's prefered protocol.
         /// </summary>
+        /// 
+
         public String preferedProtocol
         {
             get
             {
                 if (_prefered != null) 
                     return _prefered;
-
+    
                 if (AvailableProtocols == null || AvailableProtocols.Count == 0)
                     _prefered = null;
                 else if (AvailableProtocols.Count == 1)
@@ -60,10 +64,44 @@ namespace syncsoft
         public static List<Raspberry> discoverRaspberrys()
         {
             //TODO implement method
+            UdpClient udpClient = new UdpClient(PORT);
+            try
+            {
+                udpClient.EnableBroadcast = true;
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                Byte[] sendbytes = new byte[0];
+
+                udpClient.Send(sendbytes, 0, broadcastEndPoint);
+                Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
+                string receivedata = Encoding.ASCII.GetString(receivebytes);
+
+                udpClient.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
             return new List<Raspberry>();
         }
 
-        
+        public static void testsendRaspberrysanswer()
+        {
+            UdpClient udpClient = new UdpClient(PORT);
+            {
+                try
+                {
+                    udpClient.EnableBroadcast = true;
+                    IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                    Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
+                    string receivedata = Encoding.ASCII.GetString(receivebytes);
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        }
 
     }
 }
