@@ -46,14 +46,21 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="gtk-gui\WidgetLibrary.RaspberrySelection.cs" />
     <Compile Include="RaspberrySelect.cs" />
     <Compile Include="gtk-gui\WidgetLibrary.RaspberrySelect.cs" />
+    <Compile Include="SyncWindow.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.SyncWindow.cs" />
+    <Compile Include="PCDataSelectionWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.PCDataSelectionWidget.cs" />
+    <Compile Include="DragDropWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.DragDropWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.RaspberrySelection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\Sources\dragAndDropBox.png" />
   </ItemGroup>
 </Project>

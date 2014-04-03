@@ -9,6 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>syncsoft</RootNamespace>
     <AssemblyName>syncsoft</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -66,5 +67,8 @@
       <Project>{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}</Project>
       <Name>WidgetLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sources\" />
   </ItemGroup>
 </Project>
