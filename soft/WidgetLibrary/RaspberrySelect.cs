@@ -45,14 +45,16 @@ namespace WidgetLibrary
 			Gtk.CellRendererText lastconTitleCell = new Gtk.CellRendererText ();
 			lastconColumn.PackStart (lastconTitleCell, true);
 			
-			
+			/* TODO merge bugs
 			// Add the columns to the TreeView
 			devicesTreeView.AppendColumn (nameColumn);
 			devicesTreeView.AppendColumn (ipColumn);
 			devicesTreeView.AppendColumn (macColumn);
 			devicesTreeView.AppendColumn (protocolColumn);
 			devicesTreeView.AppendColumn (lastconColumn);
-			
+			*/
+
+            
 			// Tell the Cell Renderers which items in the model to display
 			nameColumn.AddAttribute (nameNameCell, "text", 0);
 			ipColumn.AddAttribute (ipTitleCell, "text", 1);

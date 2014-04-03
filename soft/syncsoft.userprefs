@@ -1,10 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="d:\Users\Simon\Documents\GitHub\syncsoft\soft\WidgetLibrary\RaspberrySelect.cs">
     <Files>
       <File FileName="Main.cs" Line="1" Column="1" />
       <File FileName="MainWindow.cs" Line="1" Column="1" />
-      <File FileName="DiscoveryContainer.cs" Line="14" Column="1" />
+      <File FileName="DiscoveryContainer.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary\SyncWindow.cs" Line="18" Column="11" />
+      <File FileName="d:\Users\Simon\Documents\GitHub\syncsoft\soft\WidgetLibrary\RaspberrySelect.cs" Line="13" Column="13" />
+      <File FileName="WidgetLibrary\gtk-gui\WidgetLibrary.RaspberrySelect.cs" Line="14" Column="3" />
+      <File FileName="WidgetLibrary\gtk-gui\WidgetLibrary.SyncWindow.cs" Line="8" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

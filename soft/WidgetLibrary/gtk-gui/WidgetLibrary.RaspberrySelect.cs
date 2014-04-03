@@ -4,12 +4,12 @@ namespace WidgetLibrary
 {
 	public partial class RaspberrySelect
 	{
-		private global::Gtk.VBox vbox2;
-		private global::Gtk.TreeView devicesTreeView;
-		private global::Gtk.Table table3;
-		private global::Gtk.Button connectButton;
-		private global::Gtk.Fixed fixed2;
-		private global::Gtk.CheckButton standardRaspCheckbutton;
+		private global::Gtk.HBox hbox1;
+		private global::Gtk.ToggleButton AutoSyncToggleButton;
+		private global::Gtk.Button ManualSyncButton;
+		private global::Gtk.Button PCButton;
+		private global::Gtk.Button PIButton;
+		private global::Gtk.ToggleButton SpecialSyncToggleButton;
 		
 		protected virtual void Build ()
 		{
@@ -18,58 +18,65 @@ namespace WidgetLibrary
 			global::Stetic.BinContainer.Attach (this);
 			this.Name = "WidgetLibrary.RaspberrySelect";
 			// Container child WidgetLibrary.RaspberrySelect.Gtk.Container+ContainerChild
-			this.vbox2 = new global::Gtk.VBox ();
-			this.vbox2.Name = "vbox2";
-			this.vbox2.Spacing = 6;
-			// Container child vbox2.Gtk.Box+BoxChild
-			this.devicesTreeView = new global::Gtk.TreeView ();
-			this.devicesTreeView.CanFocus = true;
-			this.devicesTreeView.Name = "devicesTreeView";
-			this.vbox2.Add (this.devicesTreeView);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.devicesTreeView]));
+			this.hbox1 = new global::Gtk.HBox ();
+			this.hbox1.Name = "hbox1";
+			this.hbox1.Spacing = 6;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.AutoSyncToggleButton = new global::Gtk.ToggleButton ();
+			this.AutoSyncToggleButton.CanFocus = true;
+			this.AutoSyncToggleButton.Name = "AutoSyncToggleButton";
+			this.AutoSyncToggleButton.UseUnderline = true;
+			this.AutoSyncToggleButton.Label = global::Mono.Unix.Catalog.GetString ("AutoSync");
+			this.hbox1.Add (this.AutoSyncToggleButton);
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.AutoSyncToggleButton]));
 			w1.Position = 0;
-			// Container child vbox2.Gtk.Box+BoxChild
-			this.table3 = new global::Gtk.Table (((uint)(1)), ((uint)(3)), false);
-			this.table3.Name = "table3";
-			this.table3.RowSpacing = ((uint)(6));
-			this.table3.ColumnSpacing = ((uint)(6));
-			// Container child table3.Gtk.Table+TableChild
-			this.connectButton = new global::Gtk.Button ();
-			this.connectButton.CanFocus = true;
-			this.connectButton.Name = "connectButton";
-			this.connectButton.UseUnderline = true;
-			this.connectButton.Label = global::Mono.Unix.Catalog.GetString ("connect");
-			this.table3.Add (this.connectButton);
-			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table3 [this.connectButton]));
-			w2.LeftAttach = ((uint)(2));
-			w2.RightAttach = ((uint)(3));
-			w2.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table3.Gtk.Table+TableChild
-			this.fixed2 = new global::Gtk.Fixed ();
-			this.fixed2.Name = "fixed2";
-			this.fixed2.HasWindow = false;
-			this.table3.Add (this.fixed2);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table3 [this.fixed2]));
-			w3.LeftAttach = ((uint)(1));
-			w3.RightAttach = ((uint)(2));
-			w3.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table3.Gtk.Table+TableChild
-			this.standardRaspCheckbutton = new global::Gtk.CheckButton ();
-			this.standardRaspCheckbutton.CanFocus = true;
-			this.standardRaspCheckbutton.Name = "standardRaspCheckbutton";
-			this.standardRaspCheckbutton.Label = global::Mono.Unix.Catalog.GetString ("Raspberry als Standard festlegen");
-			this.standardRaspCheckbutton.DrawIndicator = true;
-			this.standardRaspCheckbutton.UseUnderline = true;
-			this.table3.Add (this.standardRaspCheckbutton);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table3 [this.standardRaspCheckbutton]));
-			w4.XOptions = ((global::Gtk.AttachOptions)(1));
-			w4.YOptions = ((global::Gtk.AttachOptions)(4));
-			this.vbox2.Add (this.table3);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.table3]));
-			w5.Position = 1;
+			w1.Expand = false;
+			w1.Fill = false;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.ManualSyncButton = new global::Gtk.Button ();
+			this.ManualSyncButton.CanFocus = true;
+			this.ManualSyncButton.Name = "ManualSyncButton";
+			this.ManualSyncButton.UseUnderline = true;
+			this.ManualSyncButton.Label = global::Mono.Unix.Catalog.GetString ("Synchronize");
+			this.hbox1.Add (this.ManualSyncButton);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.ManualSyncButton]));
+			w2.Position = 1;
+			w2.Expand = false;
+			w2.Fill = false;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.PCButton = new global::Gtk.Button ();
+			this.PCButton.CanFocus = true;
+			this.PCButton.Name = "PCButton";
+			this.PCButton.UseUnderline = true;
+			this.PCButton.Label = global::Mono.Unix.Catalog.GetString ("PC");
+			this.hbox1.Add (this.PCButton);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.PCButton]));
+			w3.Position = 2;
+			w3.Expand = false;
+			w3.Fill = false;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.PIButton = new global::Gtk.Button ();
+			this.PIButton.CanFocus = true;
+			this.PIButton.Name = "PIButton";
+			this.PIButton.UseUnderline = true;
+			this.PIButton.Label = global::Mono.Unix.Catalog.GetString ("RaspberryPi");
+			this.hbox1.Add (this.PIButton);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.PIButton]));
+			w4.Position = 3;
+			w4.Expand = false;
+			w4.Fill = false;
+			// Container child hbox1.Gtk.Box+BoxChild
+			this.SpecialSyncToggleButton = new global::Gtk.ToggleButton ();
+			this.SpecialSyncToggleButton.CanFocus = true;
+			this.SpecialSyncToggleButton.Name = "SpecialSyncToggleButton";
+			this.SpecialSyncToggleButton.UseUnderline = true;
+			this.SpecialSyncToggleButton.Label = global::Mono.Unix.Catalog.GetString ("SpecialSync");
+			this.hbox1.Add (this.SpecialSyncToggleButton);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.SpecialSyncToggleButton]));
+			w5.Position = 4;
 			w5.Expand = false;
 			w5.Fill = false;
-			this.Add (this.vbox2);
+			this.Add (this.hbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
