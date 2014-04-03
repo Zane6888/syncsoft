@@ -9,7 +9,7 @@ namespace syncsoft
 {
     class Raspberry
     {
-        public static const int PORT = 2727;
+        public const int PORT = 2727;
         /// <summary>
         /// Human readable name of this Raspberry. Returned on discovery.
         /// </summary>

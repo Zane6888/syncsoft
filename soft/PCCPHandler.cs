@@ -10,5 +10,22 @@ namespace syncsoft
     /// </summary>
     class PCCPHandler : ConnectionHandler
     {
+        public override List<string> getFileList()
+        {
+            //TODO implement
+            throw new NotImplementedException();
+        }
+
+        public override List<ClientInfo> getClientList()
+        {
+            //TODO implement
+            throw new NotImplementedException();
+        }
+
+        public override bool sync(List<string> files)
+        {
+            //TODO implement
+            throw new NotImplementedException();
+        }
     }
 }
