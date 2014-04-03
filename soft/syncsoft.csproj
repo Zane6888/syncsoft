@@ -39,6 +39,12 @@
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="libstetic">
+      <HintPath>..\..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -52,9 +58,13 @@
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="DiscoveryContainer.cs" />
-    <Compile Include="t.cs" />
-    <Compile Include="gtk-gui\syncsoft.t.cs" />
     <Compile Include="Raspberry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="WidgetLibrary\WidgetLibrary.csproj">
+      <Project>{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}</Project>
+      <Name>WidgetLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
