@@ -10,14 +10,16 @@ namespace syncsoft
     /// </summary>
     public abstract class ConnectionHandler
     {
-        public static ConnectionHandler getProtocolHandler(String protocolName)
+        public static ConnectionHandler getConnectionHandler(String protocolName)
         {
+           
             switch(protocolName)
             {
                 case "PCCP":
                     return new PCCPHandler();
+                default:
+                    throw new ArgumentException("\"" + protocolName + "\" is not a valid protocol name.");
             }
-            return null;
         }
 
         /// <summary>

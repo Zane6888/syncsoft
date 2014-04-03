@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace syncsoft
 {
@@ -10,6 +11,8 @@ namespace syncsoft
     /// </summary>
     class PCCPHandler : ConnectionHandler
     {
+        public const int PORT = 2727;
+
         public override List<string> getFileList()
         {
             //TODO implement
@@ -24,6 +27,7 @@ namespace syncsoft
 
         public override bool sync(List<string> files)
         {
+            
             //TODO implement
             throw new NotImplementedException();
         }

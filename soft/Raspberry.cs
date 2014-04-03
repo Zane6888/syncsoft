@@ -9,7 +9,6 @@ namespace syncsoft
 {
     class Raspberry
     {
-        public const int PORT = 2727;
         /// <summary>
         /// Human readable name of this Raspberry. Returned on discovery.
         /// </summary>
@@ -64,11 +63,11 @@ namespace syncsoft
         public static List<Raspberry> discoverRaspberrys()
         {
             //TODO implement method
-            UdpClient udpClient = new UdpClient(PORT);
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             try
             {
                 udpClient.EnableBroadcast = true;
-                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                 Byte[] sendbytes = new byte[0];
 
                 udpClient.Send(sendbytes, 0, broadcastEndPoint);
@@ -86,12 +85,12 @@ namespace syncsoft
 
         public static void testsendRaspberrysanswer()
         {
-            UdpClient udpClient = new UdpClient(PORT);
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             {
                 try
                 {
                     udpClient.EnableBroadcast = true;
-                    IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                    IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                     Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
                     string receivedata = Encoding.ASCII.GetString(receivebytes);
 
