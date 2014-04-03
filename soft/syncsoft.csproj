@@ -9,6 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>syncsoft</RootNamespace>
     <AssemblyName>syncsoft</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -57,4 +58,13 @@
     <Compile Include="Raspberry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="dragAndDropBox.png">
+      <DependentUpon>DiscoveryContainer.cs</DependentUpon>
+    </None>
+    <None Include="Sources\dragAndDropBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sources\" />
+  </ItemGroup>
 </Project>

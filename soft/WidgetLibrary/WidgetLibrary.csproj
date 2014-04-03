@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>WidgetLibrary</RootNamespace>
     <AssemblyName>WidgetLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -35,7 +36,6 @@
     <Reference Include="Mono.Posix" />
     <Reference Include="MonoDevelop.GtkCore, Version=2.6.0.0, Culture=neutral">
       <Private>False</Private>
-      <Package>monodevelop-core-addins</Package>
     </Reference>
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <Private>False</Private>
@@ -47,11 +47,18 @@
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="gtk-gui\WidgetLibrary.RaspberrySelection.cs" />
     <Compile Include="RaspberrySelection.cs" />
+    <Compile Include="SyncWindow.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.SyncWindow.cs" />
+    <Compile Include="PCDataSelectionWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.PCDataSelectionWidget.cs" />
+    <Compile Include="DragDropWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.DragDropWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\Sources\dragAndDropBox.png" />
   </ItemGroup>
 </Project>
