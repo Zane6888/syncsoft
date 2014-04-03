@@ -47,14 +47,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientInfo.cs" />
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="DiscoveryContainer.cs" />
-    <Compile Include="t.cs" />
     <Compile Include="gtk-gui\syncsoft.t.cs" />
+    <Compile Include="PCCPHandler.cs" />
+    <Compile Include="ConnectionHandler.cs" />
     <Compile Include="Raspberry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -67,4 +69,5 @@
   <ItemGroup>
     <Folder Include="Sources\" />
   </ItemGroup>
+</Project>
 </Project>
