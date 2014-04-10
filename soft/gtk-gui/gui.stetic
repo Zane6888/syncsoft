@@ -20,4 +20,16 @@
       <placeholder />
     </child>
   </widget>
+  <widget class="Gtk.Window" id="syncsoft.RSelectionWindow" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">RSelectionWindow</property>
+    <property name="Icon">stock:gtk-connect Menu</property>
+    <property name="WindowPosition">Center</property>
+    <child>
+      <widget class="WidgetLibrary.RaspberrySelection" id="raspberryselection1">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>
