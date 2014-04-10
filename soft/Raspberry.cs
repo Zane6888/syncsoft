@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 namespace syncsoft
 {
-    class Raspberry
+    public class Raspberry
     {
         public static const int PORT = 2727;
         /// <summary>
@@ -33,7 +33,7 @@ namespace syncsoft
 
         private String _prefered;
         /// <summary>
-        /// The prefered sync protocol for the Raspberry. Returned on request. Cached after first Call. Is null if the Raspberry knows multiple can't state it's prefered protocol.
+        /// The prefered sync protocol for the Raspberry. Returned on request. Cached after first Call. Is null if the Raspberry knows multiple protocols and can't state it's prefered protocol.
         /// </summary>
         /// 
 
@@ -63,17 +63,21 @@ namespace syncsoft
         /// </summary>
         public static List<Raspberry> discoverRaspberrys()
         {
-            //TODO implement method
             UdpClient udpClient = new UdpClient(PORT);
             try
             {
                 udpClient.EnableBroadcast = true;
                 IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
-                Byte[] sendbytes = new byte[0];
+                Byte[] sendbytes = new byte[5];
+                sendbytes[0] = (byte)1;
+                sendbytes[1] = (byte)0;
+                sendbytes[2] = (byte)0;
+                sendbytes[3] = (byte)0;
+                sendbytes[4] = (byte)0;
 
                 udpClient.Send(sendbytes, 0, broadcastEndPoint);
                 Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
-                string receivedata = Encoding.ASCII.GetString(receivebytes);
+                string receivedata = Encoding.UTF8.GetString(receivebytes);
 
                 udpClient.Close();
             }
@@ -93,7 +97,16 @@ namespace syncsoft
                     udpClient.EnableBroadcast = true;
                     IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
                     Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
-                    string receivedata = Encoding.ASCII.GetString(receivebytes);
+                    if (receivebytes[0] == (byte)1 && receivebytes[1] == (byte)0 && receivebytes[2] == (byte)0 && receivebytes[3] == (byte)0 && receivebytes[4] == (byte)0)
+                    {
+                        Byte[] sendbytes = new byte[5];
+                        sendbytes[0] = (byte)1;
+                        sendbytes[1] = (byte)251;
+                        sendbytes[2] = (byte)252;
+                        sendbytes[3] = (byte)253;
+                        sendbytes[4] = (byte)254;
+                        udpClient.Send(sendbytes, 0, broadcastEndPoint);
+                    }
 
                 }
                 catch (Exception e)

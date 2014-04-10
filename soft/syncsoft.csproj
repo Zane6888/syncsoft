@@ -53,7 +53,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="DiscoveryContainer.cs" />
-    <Compile Include="t.cs" />
     <Compile Include="gtk-gui\syncsoft.t.cs" />
     <Compile Include="Raspberry.cs" />
   </ItemGroup>
@@ -64,7 +63,5 @@
     </None>
     <None Include="Sources\dragAndDropBox.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sources\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
