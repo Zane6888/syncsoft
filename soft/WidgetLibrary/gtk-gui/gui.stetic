@@ -5,7 +5,6 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="D:/Programme/MonoDevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
     <widget-library name="../bin/Debug/WidgetLibrary.dll" internal="true" />
   </import>
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelect" design-size="567 433">

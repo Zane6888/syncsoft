@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary\SyncWindow.cs">
     <Files>
       <File FileName="Main.cs" Line="1" Column="1" />
@@ -7,7 +7,7 @@
       <File FileName="DiscoveryContainer.cs" Line="1" Column="1" />
       <File FileName="WidgetLibrary\DragDropWidget.cs" Line="1" Column="1" />
       <File FileName="WidgetLibrary\RaspberrySelect.cs" Line="1" Column="1" />
-      <File FileName="WidgetLibrary\SyncWindow.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary\SyncWindow.cs" Line="23" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

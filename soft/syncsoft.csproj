@@ -61,9 +61,7 @@
     <Reference Include="libstetic">
       <HintPath>..\..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
     </Reference>
-    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral">
-      <Package>monodevelop-core-addins</Package>
-    </Reference>
+    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -78,7 +76,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="DiscoveryContainer.cs" />
-    <Compile Include="gtk-gui\syncsoft.t.cs" />
     <Compile Include="PCCPHandler.cs" />
     <Compile Include="ConnectionHandler.cs" />
     <Compile Include="Raspberry.cs" />
