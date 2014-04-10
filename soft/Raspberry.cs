@@ -9,7 +9,6 @@ namespace syncsoft
 {
     public class Raspberry
     {
-        public static const int PORT = 2727;
         /// <summary>
         /// Human readable name of this Raspberry. Returned on discovery.
         /// </summary>
@@ -63,17 +62,19 @@ namespace syncsoft
         /// </summary>
         public static List<Raspberry> discoverRaspberrys()
         {
-            UdpClient udpClient = new UdpClient(PORT);
+
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             try
             {
                 udpClient.EnableBroadcast = true;
-                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                 Byte[] sendbytes = new byte[5];
                 sendbytes[0] = (byte)1;
                 sendbytes[1] = (byte)0;
                 sendbytes[2] = (byte)0;
                 sendbytes[3] = (byte)0;
                 sendbytes[4] = (byte)0;
+
 
                 udpClient.Send(sendbytes, 0, broadcastEndPoint);
                 Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
@@ -90,12 +91,12 @@ namespace syncsoft
 
         public static void testsendRaspberrysanswer()
         {
-            UdpClient udpClient = new UdpClient(PORT);
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             {
                 try
                 {
                     udpClient.EnableBroadcast = true;
-                    IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PORT);
+                    IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                     Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
                     if (receivebytes[0] == (byte)1 && receivebytes[1] == (byte)0 && receivebytes[2] == (byte)0 && receivebytes[3] == (byte)0 && receivebytes[4] == (byte)0)
                     {

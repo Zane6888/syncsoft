@@ -6,6 +6,9 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../../../../../../../usr/lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
+    <widget-library name="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="../WidgetLibrary/bin/Debug/WidgetLibrary.dll" />
     <widget-library name="../bin/Debug/syncsoft.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
@@ -13,13 +16,6 @@
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
-    <child>
-      <placeholder />
-    </child>
-  </widget>
-  <widget class="Gtk.Bin" id="syncsoft.t" design-size="300 300">
-    <property name="MemberName" />
-    <property name="Visible">False</property>
     <child>
       <placeholder />
     </child>
