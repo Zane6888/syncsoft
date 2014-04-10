@@ -40,6 +40,8 @@ namespace syncsoft
             List<KeyValuePair<String, Byte[]>> lines = new List<KeyValuePair<string, byte[]>>();
             List<Byte[]> binary = new List<byte[]>();
             MD5 md5 = MD5.Create();
+
+            //TODO use Config and Helper classes for File/Path operations
             foreach (String s in dirs)
             {
                 //using "/"on all platforms for compatibility 
@@ -69,9 +71,30 @@ namespace syncsoft
 
             foreach (Byte[] b in binary)
                 sendBytes.AddRange(b);
-
+            byte type;
             Connect();
             SendPacket(PacketTypes.SyncInit, sendBytes);
+            Byte[] packet;
+            Boolean exit = false;
+            while (!exit)
+            {
+                packet = RecivePacket(out type);
+                switch ((PacketTypes)type)
+                {
+                    case PacketTypes.DataRequest:
+
+                        break;
+                    case PacketTypes.DataSend:
+                        
+                        break;
+                    case PacketTypes.SyncFinish:
+
+                        break;
+                    default:
+                        throw new ProtocolViolationException("unexpected PacketType: " + type);
+                }
+            }
+            
 
             throw new NotImplementedException();
         }
@@ -79,7 +102,7 @@ namespace syncsoft
         private void SendPacket(PacketTypes type, IEnumerable<Byte> data)
         {
             NetworkStream n = tcp.GetStream();
-            n.Write(new Byte[]{(Byte)type},0,1);
+            n.WriteByte((Byte)type);
             n.Write(BitConverter.GetBytes(data != null ? data.Count() : 0), 0, 4);
             if(data != null)
                 n.Write(data.ToArray(), 0, data.Count());
@@ -89,6 +112,40 @@ namespace syncsoft
         private void SendPacket(PacketTypes type, String data)
         {
             SendPacket(type, Encoding.UTF8.GetBytes(data));
+        }
+
+        private void SendFile(String diskLoc,String Path)
+        {
+            NetworkStream n = tcp.GetStream();
+            n.WriteByte((Byte)PacketTypes.DataSend);
+            n.Write(BitConverter.GetBytes((int)new FileInfo(diskLoc).Length), 0, 4);
+            n.Write(Encoding.UTF8.GetBytes(Path), 0, Encoding.UTF8.GetBytes(Path).Length);
+
+            FileStream s = File.OpenRead(diskLoc);
+            while (s.Position < s.Length)
+                n.WriteByte((byte)s.ReadByte());
+            
+        }
+
+        public void ReciveFile()
+        {
+            NetworkStream n = tcp.GetStream();
+            int type = n.ReadByte();
+            if (n.ReadByte() != (int)PacketTypes.DataSend)
+                throw new ProtocolViolationException("Recived type " + type +", expected type " + PacketTypes.DataSend);
+
+        }
+
+        public Byte[] RecivePacket(out Byte type)
+        {
+            NetworkStream n = tcp.GetStream();
+            type = (Byte)n.ReadByte();
+            Byte[] bSize = new Byte[4];
+            n.Read(bSize, 0, 4);
+            int size = BitConverter.ToInt32(bSize, 0);
+            Byte[] data = new Byte[size];
+            n.Read(data, 0,size);
+            return data;
         }
 
         private void Connect()
