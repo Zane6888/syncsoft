@@ -43,18 +43,23 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="libstetic">
+      <HintPath>D:\Programme\MonoDevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="gtk-gui\WidgetLibrary.SyncWindow.cs" />
     <Compile Include="PCDataSelectionWidget.cs" />
     <Compile Include="gtk-gui\WidgetLibrary.PCDataSelectionWidget.cs" />
     <Compile Include="DragDropWidget.cs" />
     <Compile Include="gtk-gui\WidgetLibrary.DragDropWidget.cs" />
-    <Compile Include="SyncWindow.cs" />
     <Compile Include="RaspberrySelection.cs" />
     <Compile Include="gtk-gui\WidgetLibrary.RaspberrySelection.cs" />
+    <Compile Include="SyncWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.SyncWidget.cs" />
+    <Compile Include="PiDataSelectionWidget.cs" />
+    <Compile Include="gtk-gui\WidgetLibrary.PiDataSelectionWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

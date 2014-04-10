@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 namespace syncsoft
 {
-    class Raspberry
+    public class Raspberry
     {
         /// <summary>
         /// Human readable name of this Raspberry. Returned on discovery.
@@ -32,7 +32,7 @@ namespace syncsoft
 
         private String _prefered;
         /// <summary>
-        /// The prefered sync protocol for the Raspberry. Returned on request. Cached after first Call. Is null if the Raspberry knows multiple can't state it's prefered protocol.
+        /// The prefered sync protocol for the Raspberry. Returned on request. Cached after first Call. Is null if the Raspberry knows multiple protocols and can't state it's prefered protocol.
         /// </summary>
         /// 
 
@@ -60,25 +60,42 @@ namespace syncsoft
         /// <summary>
         /// Scans the LAN for Available Raspberrys.
         /// </summary>
-        public static List<Raspberry> discoverRaspberrys()
+        public static void SendBroadcastDiscoverRaspberrys()
         {
-            //TODO implement method
             UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             try
             {
                 udpClient.EnableBroadcast = true;
                 IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
-                Byte[] sendbytes = new byte[0];
+                Byte[] sendbytes = new byte[5];
+                sendbytes[2] = (byte)0;
+                sendbytes[3] = (byte)0;
+                sendbytes[4] = (byte)0;
+
 
                 udpClient.Send(sendbytes, 0, broadcastEndPoint);
-                Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
-                string receivedata = Encoding.ASCII.GetString(receivebytes);
+                
 
                 udpClient.Close();
             }
             catch (Exception e)
             {
 
+            }
+        }
+
+        public static List<Raspberry> ReceiveBroadcastDiscoverRaspberrys()
+        {
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
+            try
+            {
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
+                udpClient.EnableBroadcast = true;
+                Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
+                string receivedata = Encoding.UTF8.GetString(receivebytes);
+            }
+            catch (Exception e)
+            {
             }
             return new List<Raspberry>();
         }
@@ -92,7 +109,16 @@ namespace syncsoft
                     udpClient.EnableBroadcast = true;
                     IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                     Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
-                    string receivedata = Encoding.ASCII.GetString(receivebytes);
+                    if (receivebytes[0] == (byte)1 && receivebytes[1] == (byte)0 && receivebytes[2] == (byte)0 && receivebytes[3] == (byte)0 && receivebytes[4] == (byte)0)
+                    {
+                        Byte[] sendbytes = new byte[5];
+                        sendbytes[0] = (byte)1;
+                        sendbytes[1] = (byte)251;
+                        sendbytes[2] = (byte)252;
+                        sendbytes[3] = (byte)253;
+                        sendbytes[4] = (byte)254;
+                        udpClient.Send(sendbytes, 0, broadcastEndPoint);
+                    }
 
                 }
                 catch (Exception e)

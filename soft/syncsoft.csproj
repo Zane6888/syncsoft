@@ -60,9 +60,7 @@
     <Reference Include="libstetic">
       <HintPath>..\..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
     </Reference>
-    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral">
-      <Package>monodevelop-core-addins</Package>
-    </Reference>
+    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -90,6 +88,7 @@
       <Name>WidgetLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Folder Include="Sources\" />
   </ItemGroup>

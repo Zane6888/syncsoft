@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary/PCDataSelectionWidget.cs">
     <Files>
       <File FileName="Main.cs" Line="16" Column="2" />
       <File FileName="MainWindow.cs" Line="9" Column="12" />
@@ -9,6 +9,10 @@
       <File FileName="WidgetLibrary/RaspberrySelection.cs" Line="66" Column="4" />
       <File FileName="RSelectionWindow.cs" Line="1" Column="14" />
       <File FileName="Raspberry.cs" Line="79" Column="30" />
+      <File FileName="WidgetLibrary/PiDataSelectionWidget.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/gtk-gui/WidgetLibrary.RaspberrySelection.cs" Line="57" Column="5" />
+      <File FileName="WidgetLibrary/SyncWidget.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/PCDataSelectionWidget.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

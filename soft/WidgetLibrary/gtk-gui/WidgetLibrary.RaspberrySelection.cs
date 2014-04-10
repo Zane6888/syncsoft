@@ -54,7 +54,7 @@ namespace WidgetLibrary
 			w4.Spacing = 2;
 			// Container child GtkHBox.Gtk.Container+ContainerChild
 			global::Gtk.Image w5 = new global::Gtk.Image ();
-			w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-connect", global::Gtk.IconSize.Menu);
+		//	w5.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-connect", global::Gtk.IconSize.Menu);
 			w4.Add (w5);
 			// Container child GtkHBox.Gtk.Container+ContainerChild
 			global::Gtk.Label w7 = new global::Gtk.Label ();
