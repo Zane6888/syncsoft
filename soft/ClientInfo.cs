@@ -8,7 +8,7 @@ namespace syncsoft
     /// <summary>
     /// Contains infos about Clients regarding a pi
     /// </summary>
-    class ClientInfo
+    public class ClientInfo
     {
     }
 }
