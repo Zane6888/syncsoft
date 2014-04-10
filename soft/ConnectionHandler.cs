@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Net;
 namespace syncsoft
 {
     /// <summary>
@@ -10,24 +10,25 @@ namespace syncsoft
     /// </summary>
     public abstract class ConnectionHandler
     {
-        public static ConnectionHandler getConnectionHandler(String protocolName)
+        public static ConnectionHandler getConnectionHandler(String protocolName,IPAddress ip)
         {
            
             switch(protocolName)
             {
                 case "PCCP":
-                    return new PCCPHandler();
+                    return new PCCPHandler(ip);
                 default:
                     throw new ArgumentException("\"" + protocolName + "\" is not a valid protocol name.");
             }
         }
+        protected IPAddress ip;
 
         /// <summary>
         /// Syncronize files  
         /// </summary>
         /// <param name="files">Files and directorys to syncronize, </param>
         /// <returns>Operation Sucessfull</returns>
-        public abstract bool sync(List<String> files);
+        public abstract void sync(List<String> files);
         /// <summary>
         /// Reqest List of Client from Server
         /// </summary>
