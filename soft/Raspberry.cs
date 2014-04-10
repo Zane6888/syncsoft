@@ -60,31 +60,42 @@ namespace syncsoft
         /// <summary>
         /// Scans the LAN for Available Raspberrys.
         /// </summary>
-        public static List<Raspberry> discoverRaspberrys()
+        public static void SendBroadcastDiscoverRaspberrys()
         {
-
             UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
             try
             {
                 udpClient.EnableBroadcast = true;
                 IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
                 Byte[] sendbytes = new byte[5];
-                sendbytes[0] = (byte)1;
-                sendbytes[1] = (byte)0;
                 sendbytes[2] = (byte)0;
                 sendbytes[3] = (byte)0;
                 sendbytes[4] = (byte)0;
 
 
                 udpClient.Send(sendbytes, 0, broadcastEndPoint);
-                Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
-                string receivedata = Encoding.UTF8.GetString(receivebytes);
+                
 
                 udpClient.Close();
             }
             catch (Exception e)
             {
 
+            }
+        }
+
+        public static List<Raspberry> ReceiveBroadcastDiscoverRaspberrys()
+        {
+            UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
+            try
+            {
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
+                udpClient.EnableBroadcast = true;
+                Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
+                string receivedata = Encoding.UTF8.GetString(receivebytes);
+            }
+            catch (Exception e)
+            {
             }
             return new List<Raspberry>();
         }
