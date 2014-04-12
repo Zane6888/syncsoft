@@ -10,7 +10,7 @@ namespace syncsoft
     /// </summary>
     public abstract class ConnectionHandler
     {
-        public static ConnectionHandler getConnectionHandler(String protocolName,IPAddress ip)
+        public static ConnectionHandler GetConnectionHandler(String protocolName,IPAddress ip)
         {
            
             switch(protocolName)
@@ -27,18 +27,18 @@ namespace syncsoft
         /// Syncronize files  
         /// </summary>
         /// <param name="files">Files and directorys to syncronize, </param>
-        /// <returns>Operation Sucessfull</returns>
-        public abstract void sync(List<String> files);
+        public abstract void Sync(List<String> baseDirs,List<String> exclude);
+        public abstract void Sync(List<String> baseDirs);
         /// <summary>
         /// Reqest List of Client from Server
         /// </summary>
         /// <returns>List of Clients</returns>
-        public abstract List<ClientInfo> getClientList();
+        public abstract List<ClientInfo> GetClientList();
         /// <summary>
         /// Request List of Files from Server
         /// </summary>
         /// <returns>List of Files</returns>
-        public abstract List<String> getFileList();
+        public abstract List<String> GetFileList();
 
     }
 }
