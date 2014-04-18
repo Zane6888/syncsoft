@@ -11,5 +11,7 @@
     FileListRequest = 9,
     FileList = 10,
     ErrorProtocol = 11,
-    ErrorSystem = 12
+    ErrorSystem = 12,
+    DataDelete = 13,
+    FileUpdate = 14
 }
