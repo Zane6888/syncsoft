@@ -50,38 +50,42 @@ namespace syncsoft
             List<String> basePaths = new List<String>();
             List<KeyValuePair<String, Byte[]>> lines = new List<KeyValuePair<string, byte[]>>();
             List<Byte[]> binary = new List<byte[]>();
-            MD5 md5 = MD5.Create();
-
-            //TODO use Config and Helper classes for File/Path operations
-            foreach (String s in dirs)
+            
+            foreach (String dir in dirs)
             {
-                //using "/"on all platforms for compatibility 
-                s.Replace(@"\","/");
+                if(exclude.Contains(dir))
+                    continue;
 
-                int index = s.LastIndexOf(@"/");
-                string basePath = s.Substring(0,index);
+                string[] files = Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
 
-                string[] files = Directory.GetFiles(s,"*",SearchOption.AllDirectories);
                 foreach (String file in files)
                 {
-                    String relPath = new String(file.Skip(index).ToArray());
-                    Stream st = File.OpenRead(file);
-                    Byte[] hash = md5.ComputeHash(st);
-                    st.Dispose();
-                    lines.Add(new KeyValuePair<string,byte[]>(relPath,hash));
+                    if (exclude.ContainsFile(file))
+                        continue;
+
+                    lines.Add(new KeyValuePair<string,byte[]>(FileHelper.GetRelative(file),FileHelper.GetMD5(file)));
+
                     List<byte> b = new List<byte>();
-                    b.AddRange(Encoding.UTF8.GetBytes(relPath));
-                    b.Add(0x3A);
-                    b.AddRange(hash);
-                    binary.Add(b.ToArray());
+                    b.AddRange(Encoding.UTF8.GetBytes(lines.Last().Key));
+                    b.Add((Byte)DELIMITER);
+                    b.AddRange(lines.Last().Value);
+
+                    binary.Add(b.ToArray());             
                 }
             }
-            md5.Dispose();
+           
 
             List<Byte> sendBytes = new List<byte>();
 
             foreach (Byte[] b in binary)
                 sendBytes.AddRange(b);
+
+            foreach (String e in exclude)
+            {
+                sendBytes.Add((Byte)DELIMITER);
+                sendBytes.AddRange(Encoding.UTF8.GetBytes(FileHelper.GetRelative(e)));
+            }
+
             byte type;
             Connect();
             SendPacket(PacketTypes.SyncInit, sendBytes);
@@ -102,6 +106,9 @@ namespace syncsoft
                     case PacketTypes.DataSend:
                         ReciveFile();
                         break;
+                    case PacketTypes.DataDelete:
+                        File.Delete(FileHelper.GetAbsolute(Encoding.UTF8.GetString(GetNextPacket())));
+                        break;
                     case PacketTypes.SyncFinish:
                         exit = true;
                         packet = GetNextPacket();
@@ -111,6 +118,7 @@ namespace syncsoft
                         throw new ProtocolViolationException("unexpected PacketType: " + type);
                 }
             }
+            Disconnect();
 
         }
 
