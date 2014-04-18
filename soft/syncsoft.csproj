@@ -65,10 +65,12 @@
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientInfo.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
