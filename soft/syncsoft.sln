@@ -49,10 +49,6 @@ Global
 		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|x86.ActiveCfg = Release|Any CPU
-		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Debug|x86.Build.0 = Debug|Any CPU
-		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Release|x86.ActiveCfg = Release|Any CPU
-		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
