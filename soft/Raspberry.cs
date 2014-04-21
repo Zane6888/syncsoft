@@ -13,26 +13,58 @@ namespace syncsoft
         /// Human readable name of this Raspberry. Returned on discovery.
         /// </summary>
         public String Name { get; set; }
-        /// <summary>
-        /// Local IP address.
-        /// </summary>
-        public IPAddress IP { get; set; }
+
         /// <summary>
         /// MAC Address, used for identification. 
         /// </summary>
         public String MAC { get; set; }
-        /// <summary>
-        /// Protocol used to communicate with this Raspberry.
-        /// </summary>
-        public String Protocol { get; set; }
+
         /// <summary>
         /// Is null if the client never connected to this Raspberry. Returned on discovery/read from Config.
         /// </summary>
         public DateTime LastConnected { get; set; }
 
+        /// <summary>
+        /// Local IP address.
+        /// </summary>
+        public IPAddress IP
+        {
+            get
+            {
+                return connection.IP;
+            }
+        }
+
+        /// <summary>
+        /// Protocol used to communicate with this Raspberry.
+        /// </summary>
+        public String Protocol
+        {
+            get
+            {
+                return connection.Protocol;
+            }
+        }
+
         private ConnectionHandler connection;
 
+        public Raspberry(IPAddress ip,String mac,String protocol,String name, DateTime last)
+        {
+            try
+            {
+                connection = ConnectionHandler.GetConnectionHandler(protocol, ip);
+            }
+            catch (ArgumentException ae)
+            {
+                throw ae;
+            }
 
+            MAC = mac;
+            Name = name;
+            LastConnected = last;
+        }
+
+        
 
         /// <summary>
         /// Scans the LAN for Available Raspberrys.
