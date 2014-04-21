@@ -28,6 +28,14 @@ namespace syncsoft
             this.ip = ip;
         }
 
+        public override string Protocol
+        {
+            get
+            {
+                return "PCCP";
+            }
+        }
+
         public override List<string> GetFileList()
         {
             //TODO implement
@@ -250,7 +258,7 @@ namespace syncsoft
         private void Connect(int port)
         {
             tcp = new TcpClient();
-            tcp.Connect(ip, port);
+            tcp.Connect(IP, port);
         }
 
         private void Disconnect()

@@ -23,6 +23,19 @@ namespace syncsoft
         }
         protected IPAddress ip;
 
+        public abstract String Protocol
+        {
+            get;
+        }
+
+        public IPAddress IP
+        {
+            get
+            {
+                return ip;
+            }
+        }
+
         /// <summary>
         /// Syncronize files  
         /// </summary>
