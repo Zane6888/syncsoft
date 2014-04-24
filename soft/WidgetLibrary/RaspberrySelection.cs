@@ -1,4 +1,5 @@
 using System;
+using Gtk;
 
 namespace WidgetLibrary
 {
@@ -68,6 +69,38 @@ namespace WidgetLibrary
 			// Assign the model to the TreeView
 			devicesTreeView.Model = raspberryListStore;
 			#endregion
+		}
+
+		protected void OnConnectButtonClicked (object sender, EventArgs e)
+		{
+			ListStore dataList = OnDevicesTreeViewCursorChanged();
+			//SIMON --> hier hast du deinen Bereich! :-)
+		}
+
+		protected void OnDevicesTreeViewCursorChanged (object sender, EventArgs e) // current selected Raspberry
+		{
+			TreeSelection selection = (sender as TreeView).Selection;
+			TreeModel model;
+			TreeIter iter;
+
+			ListStore dataLS = new ListStore(typeof(string), typeof(string), typeof(string), typeof(string), typeof(string));
+
+			// THE ITER WILL POINT TO THE SELECTED ROW
+			if (selection.GetSelected (out model, out iter)) {
+				string name = (model.GetValue (iter, 0).ToString ());
+				string ip = (model.GetValue (iter, 1).ToString ());
+				string mac = (model.GetValue (iter, 2).ToString ());
+				string protocol = (model.GetValue (iter, 3).ToString ());
+				string lastConn = (model.GetValue (iter, 4).ToString ());
+		
+				dataLS.AppendValues(name);
+				dataLS.AppendValues(ip);
+				dataLS.AppendValues(mac);
+				dataLS.AppendValues(protocol);
+				dataLS.AppendValues(lastConn);
+			}
+
+			return dataLS;
 		}
 	}
 }

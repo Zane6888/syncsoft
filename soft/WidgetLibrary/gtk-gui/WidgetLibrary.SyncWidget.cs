@@ -32,7 +32,7 @@ namespace WidgetLibrary
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'/></ui>");
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'/></ui>");
 			this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 			this.menubar1.Name = "menubar1";
 			this.vbox1.Add (this.menubar1);
@@ -42,19 +42,32 @@ namespace WidgetLibrary
 			w3.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox1 = new global::Gtk.HBox ();
-			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.AutoSyncToggleButton = new global::Gtk.ToggleButton ();
 			this.AutoSyncToggleButton.CanFocus = true;
 			this.AutoSyncToggleButton.Name = "AutoSyncToggleButton";
 			this.AutoSyncToggleButton.UseUnderline = true;
-			this.AutoSyncToggleButton.Label = global::Mono.Unix.Catalog.GetString ("AutoSync");
+			// Container child AutoSyncToggleButton.Gtk.Container+ContainerChild
+			global::Gtk.Alignment w4 = new global::Gtk.Alignment (0.5F, 0.5F, 0F, 0F);
+			// Container child GtkAlignment.Gtk.Container+ContainerChild
+			global::Gtk.HBox w5 = new global::Gtk.HBox ();
+			w5.Spacing = 2;
+			// Container child GtkHBox.Gtk.Container+ContainerChild
+			global::Gtk.Image w6 = new global::Gtk.Image ();
+			w5.Add (w6);
+			// Container child GtkHBox.Gtk.Container+ContainerChild
+			global::Gtk.Label w8 = new global::Gtk.Label ();
+			w8.LabelProp = global::Mono.Unix.Catalog.GetString ("AutoSync");
+			w8.UseUnderline = true;
+			w5.Add (w8);
+			w4.Add (w5);
+			this.AutoSyncToggleButton.Add (w4);
 			this.hbox1.Add (this.AutoSyncToggleButton);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.AutoSyncToggleButton]));
-			w4.Position = 0;
-			w4.Expand = false;
-			w4.Fill = false;
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.AutoSyncToggleButton]));
+			w12.Position = 0;
+			w12.Expand = false;
+			w12.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.ManSyncButton = new global::Gtk.Button ();
 			this.ManSyncButton.CanFocus = true;
@@ -62,10 +75,10 @@ namespace WidgetLibrary
 			this.ManSyncButton.UseUnderline = true;
 			this.ManSyncButton.Label = global::Mono.Unix.Catalog.GetString ("ManSync");
 			this.hbox1.Add (this.ManSyncButton);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.ManSyncButton]));
-			w5.Position = 1;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.ManSyncButton]));
+			w13.Position = 1;
+			w13.Expand = false;
+			w13.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.SpecialSyncButton = new global::Gtk.Button ();
 			this.SpecialSyncButton.CanFocus = true;
@@ -73,10 +86,10 @@ namespace WidgetLibrary
 			this.SpecialSyncButton.UseUnderline = true;
 			this.SpecialSyncButton.Label = global::Mono.Unix.Catalog.GetString ("SpecialSync");
 			this.hbox1.Add (this.SpecialSyncButton);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.SpecialSyncButton]));
-			w6.Position = 2;
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.SpecialSyncButton]));
+			w14.Position = 2;
+			w14.Expand = false;
+			w14.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.ComputerButton = new global::Gtk.Button ();
 			this.ComputerButton.CanFocus = true;
@@ -84,10 +97,10 @@ namespace WidgetLibrary
 			this.ComputerButton.UseUnderline = true;
 			this.ComputerButton.Label = global::Mono.Unix.Catalog.GetString ("Computer");
 			this.hbox1.Add (this.ComputerButton);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.ComputerButton]));
-			w7.Position = 3;
-			w7.Expand = false;
-			w7.Fill = false;
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.ComputerButton]));
+			w15.Position = 3;
+			w15.Expand = false;
+			w15.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.RaspberryButton = new global::Gtk.Button ();
 			this.RaspberryButton.CanFocus = true;
@@ -95,22 +108,22 @@ namespace WidgetLibrary
 			this.RaspberryButton.UseUnderline = true;
 			this.RaspberryButton.Label = global::Mono.Unix.Catalog.GetString ("Raspberry");
 			this.hbox1.Add (this.RaspberryButton);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.RaspberryButton]));
-			w8.Position = 4;
-			w8.Expand = false;
-			w8.Fill = false;
+			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.RaspberryButton]));
+			w16.Position = 4;
+			w16.Expand = false;
+			w16.Fill = false;
 			this.vbox1.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
-			w9.Position = 1;
-			w9.Expand = false;
-			w9.Fill = false;
+			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+			w17.Position = 1;
+			w17.Expand = false;
+			w17.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox3 = new global::Gtk.HBox ();
 			this.hbox3.Name = "hbox3";
 			this.hbox3.Spacing = 6;
 			this.vbox1.Add (this.hbox3);
-			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox3]));
-			w10.Position = 2;
+			global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox3]));
+			w18.Position = 2;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox2 = new global::Gtk.HBox ();
 			this.hbox2.Name = "hbox2";
@@ -120,19 +133,19 @@ namespace WidgetLibrary
 			this.statusbar1.Name = "statusbar1";
 			this.statusbar1.Spacing = 6;
 			this.hbox2.Add (this.statusbar1);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.statusbar1]));
-			w11.Position = 0;
+			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.statusbar1]));
+			w19.Position = 0;
 			// Container child hbox2.Gtk.Box+BoxChild
 			this.progressbar1 = new global::Gtk.ProgressBar ();
 			this.progressbar1.Name = "progressbar1";
 			this.hbox2.Add (this.progressbar1);
-			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.progressbar1]));
-			w12.Position = 1;
+			global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.progressbar1]));
+			w20.Position = 1;
 			this.vbox1.Add (this.hbox2);
-			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
-			w13.Position = 3;
-			w13.Expand = false;
-			w13.Fill = false;
+			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
+			w21.Position = 3;
+			w21.Expand = false;
+			w21.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

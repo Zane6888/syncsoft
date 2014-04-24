@@ -11,13 +11,17 @@
     <widget-library name="../WidgetLibrary/bin/Debug/WidgetLibrary.dll" />
     <widget-library name="../bin/Debug/syncsoft.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="444 373">
+    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <placeholder />
+      <widget class="WidgetLibrary.SyncWidget" id="syncwidget1">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+      </widget>
     </child>
   </widget>
   <widget class="Gtk.Window" id="syncsoft.RSelectionWindow" design-size="400 300">
