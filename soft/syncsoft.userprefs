@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary\SyncWindow.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary/SyncWidget.cs">
     <Files>
-      <File FileName="Main.cs" Line="1" Column="1" />
-      <File FileName="MainWindow.cs" Line="1" Column="1" />
-      <File FileName="DiscoveryContainer.cs" Line="1" Column="1" />
-      <File FileName="WidgetLibrary\DragDropWidget.cs" Line="1" Column="1" />
-      <File FileName="WidgetLibrary\RaspberrySelect.cs" Line="1" Column="1" />
-      <File FileName="WidgetLibrary\SyncWindow.cs" Line="1" Column="1" />
+      <File FileName="Main.cs" Line="17" Column="1" />
+      <File FileName="MainWindow.cs" Line="9" Column="12" />
+      <File FileName="DiscoveryContainer.cs" Line="14" Column="1" />
+      <File FileName="WidgetLibrary/SyncWindow.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/SyncWidget.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

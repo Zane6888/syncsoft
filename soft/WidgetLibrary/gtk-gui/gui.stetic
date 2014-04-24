@@ -5,7 +5,6 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="D:/Programme/MonoDevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
     <widget-library name="../bin/Debug/WidgetLibrary.dll" internal="true" />
   </import>
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelect" design-size="567 433">
@@ -33,7 +32,7 @@
       <placeholder />
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="422 426">
+  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="689 484">
     <action-group name="Default" />
     <property name="MemberName" />
     <property name="Visible">False</property>
@@ -145,7 +144,16 @@
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <placeholder />
+              <widget class="WidgetLibrary.DragDropWidget" id="dragdropwidget2">
+                <property name="MemberName" />
+                <property name="Events">ButtonPressMask</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
             </child>
             <child>
               <placeholder />
@@ -154,6 +162,8 @@
           <packing>
             <property name="Position">2</property>
             <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
         <child>
