@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
       <File FileName="Main.cs" Line="13" Column="23" />
@@ -8,6 +9,15 @@
       <File FileName="RSelectionWindow.cs" Line="15" Column="1" />
       <File FileName="WidgetLibrary/SyncWidget.cs" Line="15" Column="3" />
       <File FileName="Config.cs" Line="122" Column="22" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary/RaspberrySelection.cs">
+    <Files>
+      <File FileName="Main.cs" Line="11" Column="47" />
+      <File FileName="MainWindow.cs" Line="9" Column="12" />
+      <File FileName="WidgetLibrary/RaspberrySelection.cs" Line="67" Column="4" />
+      <File FileName="RSelectionWindow.cs" Line="15" Column="1" />
+      <File FileName="WidgetLibrary/SyncWidget.cs" Line="15" Column="3" />
+>>>>>>> c5cb743... RaspberrySelection finished
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -8,7 +8,7 @@ namespace syncsoft
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			MainWindow win = new MainWindow ();
+			RSelectionWindow win = new RSelectionWindow ();
 			win.Show ();
 			Application.Run ();
 		}

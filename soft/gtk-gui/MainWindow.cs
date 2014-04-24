@@ -3,18 +3,30 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.UIManager UIManager;
+	private global::WidgetLibrary.SyncWidget syncwidget1;
+	
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
+		this.UIManager = new global::Gtk.UIManager ();
+		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+		this.UIManager.InsertActionGroup (w1, 0);
+		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		// Container child MainWindow.Gtk.Container+ContainerChild
+		this.syncwidget1 = new global::WidgetLibrary.SyncWidget ();
+		this.syncwidget1.Events = ((global::Gdk.EventMask)(256));
+		this.syncwidget1.Name = "syncwidget1";
+		this.Add (this.syncwidget1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 400;
-		this.DefaultHeight = 300;
+		this.DefaultWidth = 420;
+		this.DefaultHeight = 373;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 	}

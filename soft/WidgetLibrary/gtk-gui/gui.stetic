@@ -37,7 +37,11 @@
       <placeholder />
     </child>
   </widget>
+<<<<<<< HEAD
   <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="422 426">
+=======
+  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="444 426">
+>>>>>>> c5cb743... RaspberrySelection finished
     <action-group name="Default" />
     <property name="MemberName" />
     <property name="Visible">False</property>
@@ -65,7 +69,7 @@
               <widget class="Gtk.ToggleButton" id="AutoSyncToggleButton">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
+                <property name="Type">TextAndIcon</property>
                 <property name="Label" translatable="yes">AutoSync</property>
                 <property name="UseUnderline">True</property>
               </widget>
@@ -201,19 +205,23 @@
       <placeholder />
     </child>
   </widget>
+<<<<<<< HEAD
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelection" design-size="415 168">
+=======
+  <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelection" design-size="415 249">
+>>>>>>> c5cb743... RaspberrySelection finished
     <property name="MemberName" />
     <property name="Visible">False</property>
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
-        <property name="Homogeneous">True</property>
         <property name="Spacing">6</property>
         <property name="BorderWidth">6</property>
         <child>
           <widget class="Gtk.TreeView" id="devicesTreeView">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
+            <signal name="CursorChanged" handler="OnDevicesTreeViewCursorChanged" />
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -233,6 +241,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">connect</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnConnectButtonClicked" />
               </widget>
               <packing>
                 <property name="LeftAttach">2</property>
@@ -289,7 +298,7 @@
           </widget>
           <packing>
             <property name="Position">1</property>
-            <property name="AutoSize">True</property>
+            <property name="AutoSize">False</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>

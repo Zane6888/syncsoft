@@ -73,7 +73,7 @@ namespace WidgetLibrary
 
 		protected void OnConnectButtonClicked (object sender, EventArgs e)
 		{
-			ListStore dataList;
+//			ListStore dataList = OnDevicesTreeViewCursorChanged();
 			//SIMON --> hier hast du deinen Bereich! :-)
 		}
 
@@ -99,6 +99,8 @@ namespace WidgetLibrary
 				dataLS.AppendValues(protocol);
 				dataLS.AppendValues(lastConn);
 			}
+
+//			return dataLS;
 		}
 	}
 }
