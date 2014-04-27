@@ -11,11 +11,11 @@ namespace syncsoft
         private static Dictionary<String, String> paths;//key: relative path, value: absolute path
         private static List<String> exclude;// absolute paths
 
-        private const string appName = "syncsoft";
-        private const string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), appName);
+        private static string appName = "syncsoft";
+        private static string basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), appName);
 
-        private const string dirConfig = Path.Combine(basePath, "dir.cfg"); // one kvp per line, relative:absolute
-        private const string excludeConfig = Path.Combine(basePath, "exclude.cfg"); //one excluded absolute path per line
+        private static string dirConfig = Path.Combine(basePath, "dir.cfg"); // one kvp per line, relative:absolute
+        private static string excludeConfig = Path.Combine(basePath, "exclude.cfg"); //one excluded absolute path per line
 
 
         public static void init()
@@ -119,7 +119,7 @@ namespace syncsoft
         /// Removes a path from exclusion and writes the changes to the config.
         /// </summary>
         /// <param name="excludePath">Path to stop excluding</param>
-        public static void removePath(String excludePath)
+        public static void removeExcludePath(String excludePath)
         {
             if (!exclude.Contains(excludePath))
                 throw new ArgumentException("can not unexclude non excluded path");
