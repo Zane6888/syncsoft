@@ -22,9 +22,13 @@ namespace syncsoft
         public const int TIMEOUT_COUNT = 10;
 
         private TcpClient tcp;
+        private int port;
 
-        public PCCPHandler(IPAddress ip)
+        public PCCPHandler(IPAddress ip):this(ip,PORT){}
+
+        public PCCPHandler(IPAddress ip, int Port)
         {
+            this.port = Port;
             this.ip = ip;
         }
 
@@ -252,7 +256,7 @@ namespace syncsoft
 
         private void Connect()
         {
-            Connect(PORT);
+            Connect(port);
         }
 
         private void Connect(int port)

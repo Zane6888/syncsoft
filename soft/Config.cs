@@ -24,6 +24,9 @@ namespace syncsoft
             paths = new Dictionary<string, string>();
             exclude = new List<string>();
 
+            if (!Directory.Exists(basePath))
+                Directory.CreateDirectory(basePath);
+
             if (File.Exists(dirConfig))
             {
                 using (StreamReader s = File.OpenText(dirConfig))
@@ -31,11 +34,13 @@ namespace syncsoft
                     String line;
                     while ((line = s.ReadLine()) != null)
                     {
-                        String[] split = s.ReadLine().Split(':');
+                        String[] split = line.Split(new Char[]{':'},2);
                         paths.Add(split[0], split[1]);
                     }
                 }
             }
+            else
+                File.Create(dirConfig);
 
             if (File.Exists(excludeConfig))
             {
@@ -48,6 +53,8 @@ namespace syncsoft
                     }
                 }
             }
+            else
+                File.Create(excludeConfig);
 
         }
 
