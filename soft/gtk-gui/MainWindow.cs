@@ -3,18 +3,123 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.UIManager UIManager;
+	private global::Gtk.VBox vbox2;
+	private global::Gtk.MenuBar menubar1;
+	private global::Gtk.HButtonBox hbuttonbox1;
+	private global::Gtk.ToggleButton AutoSyncToggleButton;
+	private global::Gtk.Button ManSyncButton;
+	private global::Gtk.Button SpecialSyncButton;
+	private global::Gtk.Button ComputerButton;
+	private global::Gtk.Button RaspberryButton;
+	private global::WidgetLibrary.SyncWidget syncwidget1;
+
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
+		this.UIManager = new global::Gtk.UIManager ();
+		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+		this.UIManager.InsertActionGroup (w1, 0);
+		this.AddAccelGroup (this.UIManager.AccelGroup);
+		this.ExtensionEvents = ((global::Gdk.ExtensionMode)(1));
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
-		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
+		// Container child MainWindow.Gtk.Container+ContainerChild
+		this.vbox2 = new global::Gtk.VBox ();
+		this.vbox2.Name = "vbox2";
+		this.vbox2.Spacing = 6;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'/></ui>");
+		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
+		this.menubar1.Name = "menubar1";
+		this.vbox2.Add (this.menubar1);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.menubar1]));
+		w2.Position = 0;
+		w2.Expand = false;
+		w2.Fill = false;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.hbuttonbox1 = new global::Gtk.HButtonBox ();
+		this.hbuttonbox1.Name = "hbuttonbox1";
+		this.hbuttonbox1.Homogeneous = true;
+		this.hbuttonbox1.Spacing = 5;
+		this.hbuttonbox1.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(1));
+		// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
+		this.AutoSyncToggleButton = new global::Gtk.ToggleButton ();
+		this.AutoSyncToggleButton.CanFocus = true;
+		this.AutoSyncToggleButton.Name = "AutoSyncToggleButton";
+		this.AutoSyncToggleButton.UseUnderline = true;
+		this.AutoSyncToggleButton.Label = global::Mono.Unix.Catalog.GetString ("AutoSync");
+		this.hbuttonbox1.Add (this.AutoSyncToggleButton);
+		global::Gtk.ButtonBox.ButtonBoxChild w3 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1 [this.AutoSyncToggleButton]));
+		w3.Expand = false;
+		w3.Fill = false;
+		// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
+		this.ManSyncButton = new global::Gtk.Button ();
+		this.ManSyncButton.CanFocus = true;
+		this.ManSyncButton.Name = "ManSyncButton";
+		this.ManSyncButton.UseUnderline = true;
+		this.ManSyncButton.Label = global::Mono.Unix.Catalog.GetString ("ManSync");
+		this.hbuttonbox1.Add (this.ManSyncButton);
+		global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1 [this.ManSyncButton]));
+		w4.Position = 1;
+		w4.Expand = false;
+		w4.Fill = false;
+		// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
+		this.SpecialSyncButton = new global::Gtk.Button ();
+		this.SpecialSyncButton.CanFocus = true;
+		this.SpecialSyncButton.Name = "SpecialSyncButton";
+		this.SpecialSyncButton.UseUnderline = true;
+		this.SpecialSyncButton.Label = global::Mono.Unix.Catalog.GetString ("SpecialSync");
+		this.hbuttonbox1.Add (this.SpecialSyncButton);
+		global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1 [this.SpecialSyncButton]));
+		w5.Position = 2;
+		w5.Expand = false;
+		w5.Fill = false;
+		// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
+		this.ComputerButton = new global::Gtk.Button ();
+		this.ComputerButton.CanFocus = true;
+		this.ComputerButton.Name = "ComputerButton";
+		this.ComputerButton.UseUnderline = true;
+		this.ComputerButton.Label = global::Mono.Unix.Catalog.GetString ("Computer");
+		this.hbuttonbox1.Add (this.ComputerButton);
+		global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1 [this.ComputerButton]));
+		w6.Position = 3;
+		w6.Expand = false;
+		w6.Fill = false;
+		// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
+		this.RaspberryButton = new global::Gtk.Button ();
+		this.RaspberryButton.CanFocus = true;
+		this.RaspberryButton.Name = "RaspberryButton";
+		this.RaspberryButton.UseUnderline = true;
+		this.RaspberryButton.Label = global::Mono.Unix.Catalog.GetString ("Raspberry");
+		this.hbuttonbox1.Add (this.RaspberryButton);
+		global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1 [this.RaspberryButton]));
+		w7.Position = 4;
+		w7.Expand = false;
+		w7.Fill = false;
+		this.vbox2.Add (this.hbuttonbox1);
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbuttonbox1]));
+		w8.Position = 1;
+		w8.Expand = false;
+		w8.Fill = false;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.syncwidget1 = new global::WidgetLibrary.SyncWidget ();
+		this.syncwidget1.Events = ((global::Gdk.EventMask)(256));
+		this.syncwidget1.ExtensionEvents = ((global::Gdk.ExtensionMode)(1));
+		this.syncwidget1.Name = "syncwidget1";
+		this.vbox2.Add (this.syncwidget1);
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.syncwidget1]));
+		w9.Position = 2;
+		w9.Expand = false;
+		w9.Fill = false;
+		this.Add (this.vbox2);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 400;
-		this.DefaultHeight = 300;
+		this.DefaultWidth = 921;
+		this.DefaultHeight = 351;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 	}

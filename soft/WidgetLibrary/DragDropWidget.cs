@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using Gtk;
+
+
 namespace WidgetLibrary
 {
 	[System.ComponentModel.ToolboxItem(true)]

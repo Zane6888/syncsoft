@@ -6,7 +6,7 @@ namespace WidgetLibrary
 	{
 		private global::Gtk.EventBox eventbox1;
 		private global::Gtk.Image image1;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

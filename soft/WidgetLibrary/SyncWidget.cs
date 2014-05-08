@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using Gtk;
+
 namespace WidgetLibrary
 {
 	[System.ComponentModel.ToolboxItem(true)]
@@ -16,6 +18,38 @@ namespace WidgetLibrary
 		public SyncWidget ()
 		{
 			this.Build ();
+
+		}
+
+		protected void OnDragDropWidgetDragDataReceived (object o, Gtk.DragDataReceivedArgs args)
+		{
+			MessageDialog md = new MessageDialog (null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "Funktioniert!!!");
+			md.Run ();
+			md.Destroy ();
+		}
+
+		protected void OnDragDropWidgetDragDrop (object o, DragDropArgs args)
+		{
+			MessageDialog md = new MessageDialog (null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "Funktioniert!!!");
+			md.Run ();
+			md.Destroy ();
+		}
+
+		protected void OnDragDropWidgetDragDataGet (object o, DragDataGetArgs args)
+		{
+			MessageDialog md = new MessageDialog (null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "Funktioniert!!!");
+			md.Run ();
+			md.Destroy ();
+		}
+
+
+
+
+		protected void OnDragDropWidgetDragEnd (object o, DragEndArgs args)
+		{
+			MessageDialog md = new MessageDialog (null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "Funktioniert!!!");
+			md.Run ();
+			md.Destroy ();
 		}
 	}
 }

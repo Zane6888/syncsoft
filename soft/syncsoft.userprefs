@@ -1,16 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary/SyncWidget.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary\SyncWidget.cs">
     <Files>
-      <File FileName="Main.cs" Line="17" Column="1" />
-      <File FileName="MainWindow.cs" Line="9" Column="12" />
-      <File FileName="DiscoveryContainer.cs" Line="14" Column="1" />
-      <File FileName="WidgetLibrary/SyncWindow.cs" Line="1" Column="1" />
-      <File FileName="WidgetLibrary/SyncWidget.cs" Line="15" Column="3" />
+      <File FileName="Main.cs" Line="16" Column="2" />
+      <File FileName="MainWindow.cs" Line="18" Column="1" />
+      <File FileName="WidgetLibrary\SyncWidget.cs" Line="21" Column="4" />
+      <File FileName="DiscoveryContainer.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary\SyncWindow.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary\DragDropWidget.cs" Line="22" Column="4" />
+      <File FileName="WidgetLibrary\gtk-gui\WidgetLibrary.SyncWidget.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Sebastian Kasper\Documents\GitHub\syncsoft\soft\WidgetLibrary\SyncWidget.cs" line="40" column="1" />
+      <Breakpoint file="C:\Users\Sebastian Kasper\Documents\GitHub\syncsoft\soft\WidgetLibrary\SyncWidget.cs" line="33" column="1" />
+      <Breakpoint file="C:\Users\Sebastian Kasper\Documents\GitHub\syncsoft\soft\WidgetLibrary\SyncWidget.cs" line="26" column="1" />
+      <Breakpoint file="C:\Users\Sebastian Kasper\Documents\GitHub\syncsoft\soft\WidgetLibrary\SyncWidget.cs" line="50" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

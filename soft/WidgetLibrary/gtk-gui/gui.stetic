@@ -5,9 +5,11 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
+    <widget-library name="D:/Programme/MonoDevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
     <widget-library name="../bin/Debug/WidgetLibrary.dll" internal="true" />
   </import>
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelect" design-size="567 433">
+    <property name="MemberName" />
   </widget>
   <widget class="Gtk.Bin" id="WidgetLibrary.DragDropWidget" design-size="480 529">
     <property name="MemberName" />
@@ -32,121 +34,27 @@
       <placeholder />
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="689 484">
+  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="931 413">
     <action-group name="Default" />
     <property name="MemberName" />
     <property name="Visible">False</property>
+    <property name="ExtensionEvents">All</property>
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.MenuBar" id="menubar1">
-            <property name="MemberName" />
-            <node name="__gtksharp_110_Stetic_Editor_ActionMenuBar" type="Menubar" />
-          </widget>
-          <packing>
-            <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HBox" id="hbox1">
-            <property name="MemberName" />
-            <property name="Spacing">6</property>
-            <child>
-              <widget class="Gtk.ToggleButton" id="AutoSyncToggleButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">AutoSync</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">0</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="ManSyncButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">ManSync</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">1</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="SpecialSyncButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">SpecialSync</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">2</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="ComputerButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Computer</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">3</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="RaspberryButton">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Raspberry</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">4</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.HBox" id="hbox3">
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="WidgetLibrary.DragDropWidget" id="dragdropwidget2">
+              <widget class="WidgetLibrary.DragDropWidget" id="DragDropWidget">
                 <property name="MemberName" />
                 <property name="Events">ButtonPressMask</property>
+                <signal name="DragDataReceived" handler="OnDragDropWidgetDragDataReceived" />
+                <signal name="DragDrop" handler="OnDragDropWidgetDragDrop" />
+                <signal name="DragDataGet" handler="OnDragDropWidgetDragDataGet" />
+                <signal name="DragEnd" handler="OnDragDropWidgetDragEnd" />
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -156,11 +64,17 @@
               </packing>
             </child>
             <child>
-              <placeholder />
+              <widget class="Gtk.FileChooserWidget" id="filechooserwidget1">
+                <property name="MemberName" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
             </child>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">0</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -174,6 +88,7 @@
               <widget class="Gtk.Statusbar" id="statusbar1">
                 <property name="MemberName" />
                 <property name="Spacing">6</property>
+                <property name="HasResizeGrip">False</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -191,7 +106,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">1</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
