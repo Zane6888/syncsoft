@@ -1,16 +1,15 @@
-﻿/*
-using System;
+﻿using System;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using syncsoft;
 
 
 namespace RaspberryTests
 {
-    [TestClass]
+    [TestFixture]
     public class RaspberryDiscoverTest
     {
-        [TestMethod]
+        [Test]
         public void DiscoverRaspberry()
         {      
             System.Threading.Thread SendBroadcast = new System.Threading.Thread(Raspberry.SendBroadcastDiscoverRaspberrys);
@@ -19,4 +18,3 @@ namespace RaspberryTests
         }
     }
 }
-*/
