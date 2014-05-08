@@ -75,19 +75,20 @@ namespace syncsoft
             try
             {
                 udpClient.EnableBroadcast = true;
-                IPAddress local = IPAddress.Parse("127.0.0.1");
-                IPEndPoint broadcastEndPoint = new IPEndPoint(/*IPAddress.Broadcast*/local, PCCPHandler.PORT);
+                //IPAddress local = IPAddress.Parse("25.136.233.58");
+                IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Broadcast, PCCPHandler.PORT);
                 
                 Byte[] sendbytes = new byte[5];
-                sendbytes[2] = (byte)'f';
-                sendbytes[3] = (byte)'u';
-                sendbytes[4] = (byte)'h';
-
+                sendbytes[0] = (byte)'t';
+                sendbytes[1] = (byte)'o';
+                sendbytes[2] = (byte)'b';
+                sendbytes[3] = (byte)'i';
+                sendbytes[4] = (byte)'t';
                 while (true)
                 {
-                    udpClient.Send(sendbytes, 0, broadcastEndPoint);
+                    udpClient.Send(sendbytes, 5, broadcastEndPoint);
+                    
                 }
-                
 
                 udpClient.Close();
             }
