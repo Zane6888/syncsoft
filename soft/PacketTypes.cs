@@ -1,4 +1,4 @@
-﻿enum PacketTypes : byte
+﻿public enum PacketTypes : byte
 {
     Discover = 1,
     DiscoverReply = 2,
