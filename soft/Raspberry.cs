@@ -76,7 +76,8 @@ namespace syncsoft
             try
             {
                 udpClient.EnableBroadcast = true;
-        
+                int i = 0;
+
                 NetworkInterface[] Interfaces = NetworkInterface.GetAllNetworkInterfaces();
                 IPAddress[] LocalBroadcastIPs = new IPAddress[Interfaces.Count()];
                 foreach (NetworkInterface Interface in Interfaces)
@@ -86,13 +87,13 @@ namespace syncsoft
 
                     byte[] MaskBytes = new byte[4];
                     byte[] LocalBroadcastIPBytes = new byte[4];
-                    int i = 0;
+                    
                     UnicastIPAddressInformationCollection UnicastIPInfoCol = Interface.GetIPProperties().UnicastAddresses;
                     foreach (UnicastIPAddressInformation UnicatIPInfo in UnicastIPInfoCol)
                     {
                         try
                         {
-                            if (UnicatIPInfo.Address.AddressFamily == AddressFamily.InterNetworkV6)
+                            if (UnicatIPInfo.Address.AddressFamily != AddressFamily.InterNetworkV6)
                             {
                                 for (int j = 0; j < 4; j++)
                                 {
@@ -117,10 +118,12 @@ namespace syncsoft
                 sendbytes[3] = (byte)'a';
                 sendbytes[4] = (byte)'d';
                 //broadcast WLAN: 10.51.51.255
+                
                 foreach (IPAddress LocalBroadcastIP in LocalBroadcastIPs)
                 {
                     udpClient.Send(sendbytes, 5, new IPEndPoint(LocalBroadcastIP, PCCPHandler.PORT));
                 }
+                
                 udpClient.Close();
             }
             catch (Exception e)
