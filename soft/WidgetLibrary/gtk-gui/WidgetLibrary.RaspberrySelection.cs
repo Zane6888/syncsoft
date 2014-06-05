@@ -88,6 +88,8 @@ namespace WidgetLibrary
 				this.Child.ShowAll ();
 			}
 			this.Hide ();
+			this.devicesTreeView.CursorChanged += new global::System.EventHandler (this.OnDevicesTreeViewCursorChanged);
+			this.connectButton.Clicked += new global::System.EventHandler (this.OnConnectButtonClicked);
 		}
 	}
 }
