@@ -30,7 +30,6 @@
       <placeholder />
     </child>
   </widget>
-
   <widget class="Gtk.Bin" id="WidgetLibrary.PiDataSelectionWidget" design-size="300 300">
     <property name="MemberName" />
     <property name="Visible">False</property>
@@ -38,8 +37,7 @@
       <placeholder />
     </child>
   </widget>
-
-<widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="422 426">
+  <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="422 426">
     <action-group name="Default" />
     <property name="MemberName" />
     <property name="Visible">False</property>
@@ -50,7 +48,7 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-            <node name="__gtksharp_110_Stetic_Editor_ActionMenuBar" type="Menubar" />
+            <node name="menubar1" type="Menubar" />
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -203,7 +201,6 @@
       <placeholder />
     </child>
   </widget>
-
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelection" design-size="415 168">
     <property name="MemberName" />
     <property name="Visible">False</property>
@@ -300,6 +297,4 @@
       </widget>
     </child>
   </widget>
-
-
 </stetic-interface>

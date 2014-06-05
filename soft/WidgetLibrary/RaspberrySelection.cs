@@ -1,4 +1,5 @@
 using System;
+using Gtk;
 
 namespace WidgetLibrary
 {
@@ -69,8 +70,6 @@ namespace WidgetLibrary
 			devicesTreeView.Model = raspberryListStore;
 			#endregion
 		}
-<<<<<<< Updated upstream
-=======
 
 		protected void OnConnectButtonClicked (object sender, EventArgs e)
 		{
@@ -101,7 +100,6 @@ namespace WidgetLibrary
 				dataLS.AppendValues(lastConn);
 			}
 		}
->>>>>>> Stashed changes
 	}
 }
 
