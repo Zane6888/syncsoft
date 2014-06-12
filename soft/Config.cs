@@ -18,6 +18,7 @@ namespace syncsoft
         private static string excludeConfig = Path.Combine(basePath, "exclude.cfg"); //one excluded absolute path per line
 
 
+
         public static void init()
         {
             //TODO add general config
@@ -26,6 +27,8 @@ namespace syncsoft
 
             if (!Directory.Exists(basePath))
                 Directory.CreateDirectory(basePath);
+
+
 
             if (File.Exists(dirConfig))
             {
@@ -41,6 +44,7 @@ namespace syncsoft
             }
             else
                 File.Create(dirConfig);
+
 
             if (File.Exists(excludeConfig))
             {
@@ -79,17 +83,6 @@ namespace syncsoft
             {
                 s.WriteLine(relative + ":" + absolute);
             }
-        }
-
-        /// <summary>
-        /// Adds a path to track and writes it to the config file. Uses the standard location on the Syncbox.
-        /// </summary>
-        /// <param name="absolute">Local path to add</param>
-        public static void addPath(String absolute)
-        {
-            String[] split = absolute.Split(new Char[]{'/','\\'});
-            String relative = "/" + split[split.Length - 1];
-            addPath(relative, absolute);
         }
 
         /// <summary>

@@ -37,6 +37,7 @@
       <placeholder />
     </child>
   </widget>
+
   <widget class="Gtk.Bin" id="WidgetLibrary.SyncWidget" design-size="444 426">
     <action-group name="Default" />
     <property name="MemberName" />
@@ -201,6 +202,7 @@
       <placeholder />
     </child>
   </widget>
+
   <widget class="Gtk.Bin" id="WidgetLibrary.RaspberrySelection" design-size="415 249">
     <property name="MemberName" />
     <property name="Visible">False</property>

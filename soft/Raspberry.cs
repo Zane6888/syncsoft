@@ -76,6 +76,7 @@ namespace syncsoft
             try
             {
                 udpClient.EnableBroadcast = true;
+
                 int i = 0;
 
                 NetworkInterface[] Interfaces = NetworkInterface.GetAllNetworkInterfaces();
@@ -121,9 +122,18 @@ namespace syncsoft
                 
                 foreach (IPAddress LocalBroadcastIP in LocalBroadcastIPs)
                 {
-                    udpClient.Send(sendbytes, 5, new IPEndPoint(LocalBroadcastIP, PCCPHandler.PORT));
-                }
                 
+
+                IPAddress local = IPAddress.Parse("127.0.0.1");
+                IPEndPoint broadcastEndPoint = new IPEndPoint(/*IPAddress.Broadcast*/local, PCCPHandler.PORT);
+                
+
+                while (true)
+                {
+                    udpClient.Send(sendbytes, 0, broadcastEndPoint);
+
+                }
+				}
                 udpClient.Close();
             }
             catch (Exception e)
@@ -148,7 +158,34 @@ namespace syncsoft
             return new List<Raspberry>();
         }
 
-    
+        //public static void testsendRaspberrysanswer()
+        //{
+        //    UdpClient udpClient = new UdpClient(PCCPHandler.PORT);
+        //    {
+        //        try
+        //        {
+        //            udpClient.EnableBroadcast = true;
+        //            IPEndPoint broadcastEndPoint = new IPEndPoint(IPAddress.Any, PCCPHandler.PORT);
+        //            Byte[] receivebytes = udpClient.Receive(ref broadcastEndPoint);
+        //            if (receivebytes[0] == (byte)1 && receivebytes[1] == (byte)0 && receivebytes[2] == (byte)0 && receivebytes[3] == (byte)0 && receivebytes[4] == (byte)0)
+        //            {
+        //                Byte[] sendbytes = new byte[5];
+        //                sendbytes[0] = (byte)1;
+        //                sendbytes[1] = (byte)251;
+        //                sendbytes[2] = (byte)252;
+        //                sendbytes[3] = (byte)253;
+        //                sendbytes[4] = (byte)254;
+        //                udpClient.Send(sendbytes, 0, broadcastEndPoint);
+        //            }
+
+        //        }
+        //        catch (Exception e)
+        //        {
+
+        //        }
+        //    }
+        //}
+
 
     }
 }
