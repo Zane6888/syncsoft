@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "syncsoft", "syncsoft.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WidgetLibrary", "WidgetLibrary\WidgetLibrary.csproj", "{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspberryTests", "..\RaspberryTests\RaspberryTests.csproj", "{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspberryTests", "..\RaspberryTests\RaspberryTests.csproj", "{A661F557-23BE-4BCB-BC99-AC7E55909E90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,16 +39,16 @@ Global
 		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Release|x86.ActiveCfg = Release|Any CPU
 		{1AE9BC4B-DD0F-4FAD-A731-2119F3811459}.Release|x86.Build.0 = Release|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B53162B6-AD7B-4D52-AFA6-E8728C0C578A}.Release|x86.ActiveCfg = Release|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A661F557-23BE-4BCB-BC99-AC7E55909E90}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

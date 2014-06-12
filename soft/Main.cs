@@ -8,8 +8,11 @@ namespace syncsoft
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			RSelectionWindow win = new RSelectionWindow ();
-			win.Show ();
+
+            Raspberry.SendBroadcastDiscoverRaspberrys();
+			MainWindow win = new MainWindow ();
+            win.Show ();    
+
 			Application.Run ();
 		}
 	}

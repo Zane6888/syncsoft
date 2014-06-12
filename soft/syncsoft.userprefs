@@ -1,12 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WidgetLibrary/RaspberrySelection.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainWindow.cs">
     <Files>
-      <File FileName="Main.cs" Line="11" Column="47" />
-      <File FileName="MainWindow.cs" Line="9" Column="12" />
-      <File FileName="WidgetLibrary/RaspberrySelection.cs" Line="67" Column="4" />
-      <File FileName="RSelectionWindow.cs" Line="15" Column="1" />
-      <File FileName="WidgetLibrary/SyncWidget.cs" Line="15" Column="3" />
+      <File FileName="WidgetLibrary/RaspberrySelection.cs" Line="94" Column="20" />
+      <File FileName="Config.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/PCDataSelectionWidget.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/PiDataSelectionWidget.cs" Line="1" Column="1" />
+      <File FileName="WidgetLibrary/SyncWidget.cs" Line="1" Column="1" />
+      <File FileName="Main.cs" Line="1" Column="1" />
+      <File FileName="MainWindow.cs" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -48,10 +48,18 @@ namespace syncsoft
 
         public static bool ContainsFile(this List<String> list, String file)
         {
+            if (list.Count == 0)
+                return false;
             if (list.Contains(file))
                 return true;
-
-            return list.First(s => file.Contains(s)) != null;
+            try{
+                list.First(s => file.Contains(s));
+                return true;
+            }
+            catch(Exception)
+            {
+            return false;
+            }
         }
 
 
